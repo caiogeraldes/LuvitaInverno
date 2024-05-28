@@ -2,25 +2,37 @@
 
 \usepackage{hyperref}
 
-\usepackage[main=brazil]{babel}
+\usepackage[english,main=brazil]{babel}
 \usepackage{fontspec}
 \setmainfont{Brill}
 
+\usepackage{csquotes}
 \usepackage{paralist}
+\usepackage{fullpage}
 
 \title{Introdução ao Luvita Hieroglífico:\\\large Panorama gramatical e inscrições da idade do ferro}
-\author{Caio Geraldes\\\url{caio.geraldes@usp.br}}
+\author{Caio Geraldes\\\href{mailto:caio.geraldes@usp.br}{<caio.geraldes@usp.br>}}
 \date{\today}
+
+\usepackage[backend=biber,
+	style=abnt,
+	repeatfields,
+	ittitles,
+	% indent,
+	giveninits,
+	justify,
+	noslsn,
+	natbib,
+	extrayear,
+]{biblatex}
+\addbibresource{./biblio.bib}
 
 \begin{document}
 
 \maketitle
 
-\noindent\textbf{Ministrante:} Caio Geraldes
-
-\noindent\textbf{Coordenador:} José Marcos Macedo
-
-\noindent\textbf{Departamento:} DLCV
+\noindent\textbf{Ministrante:} Caio Geraldes\hfill\textbf{Coordenador:} José
+Marcos Macedo\hfill\textbf{Departamento:} DLCV
 
 \chapter{Introdução}
 
@@ -78,7 +90,7 @@ geográficos, tanto na pesquisa linguística quanto na pesquisa histórica.
 			\item Sistema de escrita e fonologia (30m)
 			\item Flexão nominal (15m)
 		\end{compactitem}
-		\item Leitura da dedicatória Babylon 3 (15m)
+		\item Leitura da dedicatória BABYLON 3 (15m)
 	\end{compactitem}
 	\item Segunda semana:
 
@@ -108,5 +120,22 @@ geográficos, tanto na pesquisa linguística quanto na pesquisa histórica.
 	\end{compactitem}
 	\item Quinta semana: Leitura de trechos da inscrição de KARATEPE (2h)
 \end{compactitem}
+
+
+\nocite{
+	Velhartická2016,
+	Payne2010,
+	Payne2012,
+	CHLI_1_1,
+	CHLI_1_2,
+	CHLI_1_3,
+	CHLI_2,
+	CHLI_3,
+	Mouton2013,
+	Yakubovich2010,
+	Melchert2003
+}
+
+\printbibliography%
 
 \end{document}
