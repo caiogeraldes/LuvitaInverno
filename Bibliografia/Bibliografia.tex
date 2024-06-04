@@ -1,0 +1,51 @@
+\documentclass[article,12pt]{memoir}
+
+\usepackage{hyperref}
+
+\usepackage[english,main=brazil]{babel}
+\usepackage{fontspec}
+\setmainfont{Brill}
+
+\usepackage{csquotes}
+\usepackage{paralist}
+\usepackage{fullpage}
+
+\title{Bibliografia:\\Introdução ao Luvita Hieroglífico:\\\large Panorama gramatical e inscrições da idade do ferro}
+\author{Caio Geraldes\\\href{mailto:caio.geraldes@usp.br}{<caio.geraldes@usp.br>}}
+\date{\today}
+
+\usepackage[backend=biber,
+	style=abnt,
+	repeatfields,
+	ittitles,
+	% indent,
+	giveninits,
+	justify,
+	noslsn,
+	natbib,
+	extrayear,
+]{biblatex}
+\addbibresource{./biblio.bib}
+
+\begin{document}
+
+\maketitle
+
+\nocite{
+	Velhartická2016,
+	Payne2010,
+	Payne2012,
+	CHLI_1_1,
+	CHLI_1_2,
+	CHLI_1_3,
+	CHLI_2,
+	CHLI_3,
+	Mouton2013,
+	Yakubovich2010,
+	Melchert2003,
+	Bauer2013
+}
+
+\printbibliography%
+
+\end{document}
