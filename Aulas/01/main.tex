@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt,article]{memoir}
+
+\usepackage{csquotes}
+\usepackage{fontspec}
+\usepackage[main=brazil]{babel}
+\defaultfontfeatures{Renderer=Harfbuzz}
+
+\babelfont[brazil]{rm}{Gentium Plus}
+\babelfont[brazil]{sf}{Noto Sans}
+\babelfont[brazil]{tt}[Scale=0.8]{Mononoki Nerd Font}
+
+\babelprovide[import, onchar=ids fonts letters]{ancientgreek}
+\babelfont[ancientgreek]{rm}{Brill}
+\babeltags{grc = ancientgreek}
+
+\input{luwian.tex}
+
+\babelprovide[import,onchar=ids fonts]{sanskrit}
+\babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
+\babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
+
+\usepackage{hyperref}%
+
+\title{Luvita Hieroglífico\\\hspace{10pt}\large Aula 01:\\\large Gramática: Sistema de escrita, flexão nominal\\\large Leitura: BABYLON 3}
+\author{Caio Geraldes\\\href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}} }
+
+\begin{document}
+\maketitle
+
+oi ἄνδρα
+
+𔐂
+
+
+क्षिप्रं हि मानुषे लोके सिद्धिर्भवति कर्मजा ॥
+
+\medskip
+\end{document}
