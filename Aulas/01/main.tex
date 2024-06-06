@@ -3,11 +3,14 @@
 \usepackage{csquotes}
 \usepackage{fontspec}
 \usepackage[main=brazil]{babel}
-\defaultfontfeatures{Renderer=Harfbuzz}
+% \defaultfontfeatures{Renderer=Harfbuzz}
 
-\babelfont[brazil]{rm}{Gentium Plus}
+\babelfont[brazil]{rm}[
+	Numbers=OldStyle,
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
 \babelfont[brazil]{sf}{Noto Sans}
-\babelfont[brazil]{tt}[Scale=0.8]{Mononoki Nerd Font}
+\babelfont[brazil]{tt}{Mononoki Nerd Font}
 
 \babelprovide[import, onchar=ids fonts letters]{ancientgreek}
 \babelfont[ancientgreek]{rm}{Brill}
@@ -15,24 +18,89 @@
 
 \input{luwian.tex}
 
+\babelprovide{hittite}
+\babelfont[hittite]{rm}{UllikummiA}
+
 \babelprovide[import,onchar=ids fonts]{sanskrit}
 \babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
 \babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
 
 \usepackage{hyperref}%
 
-\title{Luvita Hieroglífico\\\hspace{10pt}\large Aula 01:\\\large Gramática: Sistema de escrita, flexão nominal\\\large Leitura: BABYLON 3}
-\author{Caio Geraldes\\\href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}} }
+\title{Luvita Hieroglífico -- Aula 01}
+\author{Caio Geraldes }
+
+\usepackage[backend=biber,
+	style=abnt,
+	repeatfields,
+	ittitles,
+	% indent,
+	giveninits,
+	justify,
+	noslsn,
+	natbib,
+	extrayear,
+]{biblatex}
+\addbibresource{../../Bibliografia/biblio.bib}
+
+
+\renewcommand{\maketitle}{
+    \noindent{\huge\thetitle}
+    \vspace{0.75\baselineskip}
+
+ \noindent{\Large{}Gramática: Sistema de escrita, flexão nominal}
+
+    \vspace{0.25\baselineskip}
+
+    \noindent{\Large Leitura: BABYLON 3}
+
+    \vspace{0.75\baselineskip}
+
+    \noindent{\large\theauthor} -- \href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
+
+    \vspace*{2\baselineskip}
+    \thispagestyle{title}
+}
+
+\usepackage{lipsum}
 
 \begin{document}
 \maketitle
 
-oi ἄνδρα
 
-𔐂
+\chapter{Introdução: quem, quando e onde?}
 
 
-क्षिप्रं हि मानुषे लोके सिद्धिर्भवति कर्मजा ॥
+\textbf{Luvita} denota um povo e uma língua e seus dialetos cuja existência,
+até o começo do século passado, estava perdida na história.\footnote{Esta seção
+	está baseada sobretudo em \textcite{CHLI_1_1,Melchert2003,Hoffner2008}.}
+Quando no final do século \textsc{xix} foram encontrados blocos de pedra no
+norte da Síria com inscrições em hieroglifos em alto relevo, associaram esta
+nova língua e o povo que a escreveu com os \textbf{hititas}, um povo que até
+então era lembrado por passagens da bíblia hebraica e alguns documentos
+recentemente descobertos em assírio.
+Em 1906, as escavações realizadas em Boğazköy\slash{}Boğazkale sob deiração de
+Hugo Winckler e Theodore Makridi revelaram a cidade de Hattusa,
+capital do que teria sido depois chamado de Império Hitita, e nela um grande
+arquivo de documentos em cuneiforme em uma língua até então
+desconhecida.\footnote{A decifração do cuneiforme nesta altura já estava
+	bastante adiantada, tendo sido iniciada nos primeiros anos do século
+	\textsc{xix} e relativamente bem estabelecida dentro da primeira metade do
+	século para o persa antigo, acadiano e elamita.}
+Apenas em 1915-17, Bedřich Hrozný conseguiria ao mesmo tempo demonstrar que a
+língua nesses arquivos e em duas cartas previamente escavadas em
+\href{https://pleiades.stoa.org/places/149576487}{Tell el-Amarna}
+(Egito moderno) era uma língua indo-europeia e produzir um esboço gramatical
+dela, identificando-a como a língua dos hititas.
+A língua dos hieróglifos sírios passou a ser conhecida por ``hitita
+hieroglífico'' e, de sua descoberta até a década de 20, os textos permaneceram
+praticamente ilegíveis.\footnote{Alguns sinais tinham sido corretamente
+	interpretados por Sayce entre 1882 e 1884, a saber os logogramas L.17 𔐑
+	\textsc{rex} e L.228 𔔆 \textsc{regio}, respectivamente correspondentes aos
+	cuneiformes \foreignlanguage{hittite}{𒈗} \textsc{lugal} `rei' e
+	\foreignlanguage{hittite}{𒆳} \textsc{kur} `país\slash{}território'.}
 
-\medskip
+
+\printbibliography%
+
 \end{document}
