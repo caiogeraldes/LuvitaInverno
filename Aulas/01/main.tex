@@ -1,3 +1,4 @@
+%! TeX program = lualatex
 \documentclass[a4paper,12pt]{memoir}
 
 \settrimmedsize{\stockheight}{\stockwidth}{*}
@@ -20,7 +21,7 @@
 \makeevenhead{ruled}{\scshape\leftmark}{}{}
 \makeoddhead{ruled}{}{}{\scshape\rightmark}
 \makepsmarks{ruled}{%
-        \nouppercaseheads
+        \nouppercaseheads%
         \createmark{chapter}{left}{shownumber}{\scshape}{.\space}
         \createmark{part}{right}{shownumber}{}{.\space}
         \createmark{section}{right}{shownumber}{}{.\space}
@@ -127,7 +128,7 @@
 	repeatfields,
 	ittitles,
 	indent,
-	giveninits,
+	% giveninits,
 	justify,
 	noslsn,
 	natbib,
@@ -177,6 +178,7 @@
 
 \setlength{\Exlabelsep}{0.5em}
 \setlength{\SubExleftmargin}{1.5em}
+
 \frontmatter
 \maketitle
 
@@ -187,129 +189,18 @@
 
 
 \chap{Introdução}
-
-\section{Quem, quando e onde?}
-
-\emph{Luvita} denota um povo e uma língua e seus dialetos cuja existência,
-até o começo do século passado, estava perdida na história.\footnote{Esta seção
-	está baseada sobretudo em \textcite{CHLI_1_1,Melchert2003,Hoffner2008}.}
-Quando no final do século \textsc{xix} foram encontrados blocos de pedra no
-norte da Síria com inscrições em hieroglifos em alto relevo, associaram esta
-nova língua e o povo que a escreveu com os \emph{hititas}, um povo que até
-então era lembrado por passagens da bíblia hebraica e alguns documentos
-recentemente descobertos em assírio.
-Em 1906, as escavações realizadas em Boğazköy\slash{}Boğazkale sob deiração de
-Hugo Winckler e Theodore Makridi revelaram a cidade de Hattusa,
-capital do que teria sido depois chamado de Império Hitita, e nela um grande
-arquivo de documentos em cuneiforme em uma língua até então
-desconhecida.\footnote{A decifração do cuneiforme nesta altura já estava
-	bastante adiantada, tendo sido iniciada nos primeiros anos do século
-	\textsc{xix} e relativamente bem estabelecida dentro da primeira metade do
-	século para o persa antigo, acadiano e elamita.}
-Apenas em 1915-17, Bedřich Hrozný conseguiria ao mesmo tempo demonstrar que a
-língua nesses arquivos e em duas cartas previamente escavadas em
-\href{https://pleiades.stoa.org/places/149576487}{Tell el-Amarna}
-(Egito moderno) era uma língua indo-europeia e produzir um esboço gramatical
-dela, identificando-a como a língua dos hititas.
-Entre os textos em cuneiforme escavados em Boğazköy  entre 1906 e 22 revelaram
-dentro deles uma outra língua que viria a ser conhecida pelo nome de
-\emph{luvita}.\footnote{Alguns termos soltos dessa língua aparecem marcados com
-	um sinal cuneiforme, \foreignlanguage{hittite}{𒃵}, chamado pelo nome alemão
-	\emph{Glossenkeil} em meio a textos hititas.}
-
-A língua dos hieróglifos das inscrições sírias, no entanto, permaneceu
-praticamente ilegível desde sua descoberta até a década de 30.\footnote{Alguns
-	sinais tinham sido corretamente interpretados por Sayce entre 1882 e 1884, a
-	saber os logogramas L.17 𔐑 \textsc{rex} e L.228 𔔆 \textsc{regio},
-	respectivamente correspondentes aos cuneiformes \foreignlanguage{hittite}{𒈗}
-	\textsc{lugal} `rei' e \foreignlanguage{hittite}{𒆳} \textsc{kur}
-	`país\slash{}território'.}
-No começo da década de 30, contribuições separadas de Meriggi, Gelb, Forrer,
-Bossert e Hrozný ofereceram interpretação de diversos logogramas e
-interpretações ou, ao menos, aproximações para alguns silabogramas,
-permitindo as primeiras tentativas de interpretação.
-No começo da década de 40, Güterbock compila selos contendo escrita cuneiforme e
-hieroglífica e avança na interpretação dos grafemas.
-Entre 1946 e 1960, Bossert passa a publicar a inscrição bilíngue em hieróglifos
-e em fenício descoberta por ele e Halet Çambel em Karatepe.
-
-\noindent Datas:
-\begin{compactenum}
-	\item Imperial: séc. \textsc{xiii aec}, entre as dinastinas de Tudhaliya IV e
-	Suppiluliuma II
-	\item Neo-hitita: \emph{circa} 1100-700 \textsc{aec}
-\end{compactenum}
-
-\begin{figure}[ht!]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{../../Mídia/Map01.png}
-	\end{center}
-	\caption{Mapa contendo a localização das inscrições monumentais em luvita
-		hieroglífico. Os pontos laranjas representam inscrições do período imperial
-		enquanto os verdes, inscrições do período neo-hitita.}\label{fig:mapa1}
-\end{figure}
+\input{./chaps/00_introdução.tex}
 
 \chapter{Sistema de escrita, fonologia e flexão nominal}
-
-\section{Sistema de escrita}
-
-\lipsum[4]
-
-\section{Fonologia}
-
-\lipsum[3]
-
-\section{Flexão nominal}
-
-\lipsum[1]
-
-\section{Leitura: BABYLON 3}
-
-Trata-se de um vaso em estado fragmentário (quatro pedaços) escavado por
-Koldewey na década de 20 onde se acredita ser a cidade de Babilônia, sítio
-arqueológico de Arpada, noroeste de Aleppo (Síria), contendo uma inscrição no
-beiral em cursivas de baixo relevo, sentido sinistroverso, em duas linhas a
-serem lidas em conjunto (para cada coluna, lê-se o caractere na primeira linha,
-em seguida o da segunda linha e assim sucessivamente).
-
-\begin{figure}[ht!]
-	\begin{center}
-		\includegraphics[width=\textwidth]{../../Mídia/aleppo23.jpg}
-	\end{center}
-	\begin{center}
-		\includegraphics[width=\textwidth]{../../Mídia/babylon3.png}
-	\end{center}
-	\caption{Babylon 3. Diâmetro: 0.66m.; Profundidade (interna): 0.67m. Imagens
-		produzidas e traçado feito por \textcite[\emph{plate} 212]{CHLI_1_3}.
-		Atualmente no \foreignlanguage{german}{Vorderasiatisches Museum}, Berlin, no. VA Bab. 1507.}\label{fig:babylon3}
-\end{figure}
-
-
-\ex.\ag.{\Large 𔖪𔓱𔗬𔗷} {\Large 𔗎𔔯𔗏𔗧𔑣𔐤} {\Large 𔑵𔑣𔓱𔗔} {\Large 𔓢𔑞𔕸𔗐} {\Large 𔖖𔓢𔕙𔑣}
-{\Large 𔐎𔐤} {\Large [𔑇]𔗬𔑯}\\
-za-ia-wa/i-a\hspace{10pt} ``SCALPRUM''-ka-ti-na\hspace{10pt}
-CERVUS\textsubscript{2}-ti-ia-sa\hspace{10pt} TONITRUS.HALPA-pa-ni\hspace{10pt}
-DEUS.TONITRUS-hu-ti\hspace{10pt} PRAE-na\hspace{10pt} [PONERE]-wa/i-ta\\
-zaya=wa katin(a) Runtiyas halpawani Tarhu(n)ti paran tuwa-ta
-\bg. zaya=wa katin(a) Runtiyas halpawani Tarhu(n)ti paran tuwata\\
-\Det{}\Acu{} vasilha.\Neut{}\Acu{} R.\Com{}\Nom{} halabeu.\Dat{} T.\Dat{} \Prep{} colocar-3\Sg\\
-Esta vaso Runtiyas colocou em frente (=dedicou) ao Tarhunta halabeu.
+\input{./chaps/01_aula1.tex}
 
 
 \backmatter%
 
 
 \chap{Vocabulário}
+\input{./chaps/vocab.tex}
 
-{
-	\normalsize
-	kati- (subst. \Neut) vaso, vasilha\\
-	Runtiya- (nome próprio. \Com) Runtiya\\
-	halpawan- (adj.) proveniente de Halpa; halabeu\\
-	Tarhu(n)t- (nome próprio, teônimo) Tarhunta\\
-	paran (\Prep) em frente a\\
-	tuwa- (v.)\\
-}
 
 \chap{Glossário}
 
