@@ -106,6 +106,7 @@ places <- tribble(
   "Domuztepe", 37.199056524783465, 36.26505817606145, "Neo-hitita",
   "Hasanbeyli", 37.131924054738754, 36.554276261431504, "Neo-hitita",
   "Zincirli", 37.102690104159386, 36.67904970148285, "Neo-hitita",
+  "Zincirli", 37.102690104159386, 36.67904970148285, "Selo",
   "Karaburçlu", 37.14378824436219, 36.70016721045827, "Neo-hitita",
   "Hacıbebekli", 37.34619534183616, 36.90834100928197, "Neo-hitita",
   "İsmailli", 37.617189934932604, 36.69366321825683, "Neo-hitita",
@@ -123,6 +124,10 @@ places <- tribble(
   "Karkamış", 36.82987291320572, 38.01646051604813, "Neo-hitita",
   "Birecik", 37.02515413179792, 37.97677885050792, "Neo-hitita",
   "Şaraga", 36.86176448441441, 38.02056625072594, "Neo-hitita",
+  "Lidar", 37.6017589738385, 38.53376345504077, "Selo",
+  "Malatya", 38.35717803636259, 38.335645846449374, "Selo",
+  "Nineveh", 36.35870489286482, 43.152081214530284, "Selo",
+  "Khorsabad", 36.5101533326198, 43.224238154006365, "Selo",
 )
 
 ggplot(data = world) +
@@ -134,7 +139,7 @@ ggplot(data = world) +
     lwd = 1.5
   ) +
   coord_sf(
-    xlim = c(25.5, 40),
+    xlim = c(25.5, 45),
     ylim = c(42.5, 34.3),
     expand = FALSE,
     label_axes = c("", "")
@@ -148,7 +153,8 @@ ggplot(data = world) +
   scale_color_manual(
     values = c(
       "#e89275",
-      "#035959"
+      "#035959",
+      "blue"
     )
   ) +
   xlab("") +

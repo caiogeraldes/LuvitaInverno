@@ -1,14 +1,30 @@
-\documentclass[article,12pt]{memoir}
+\documentclass[article,a4paper,oneside,12pt]{memoir}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settypeblocksize{250mm}{130mm}{*}
+\setlrmargins{*}{*}{1.2}
+\setulmargins{*}{*}{3}
+\checkandfixthelayout%
 
 \usepackage{hyperref}
+\usepackage{hyphenat}
 
-\usepackage[english,main=brazil]{babel}
+
+\usepackage[german,english,main=brazil]{babel}
 \usepackage{fontspec}
-\setmainfont{Brill}
+
+\babelfont[brazil]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[english]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[german]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
 
 \usepackage{csquotes}
 \usepackage{paralist}
-\usepackage{fullpage}
 
 \title{Bibliografia:\\Introdução ao Luvita Hieroglífico:\\\large Panorama gramatical e inscrições da idade do ferro}
 \author{Caio Geraldes\\\href{mailto:caio.geraldes@usp.br}{<caio.geraldes@usp.br>}}
@@ -18,7 +34,7 @@
 	style=abnt,
 	repeatfields,
 	ittitles,
-	% indent,
+	indent,
 	giveninits,
 	justify,
 	noslsn,

@@ -1,4 +1,82 @@
-\documentclass[a4paper,12pt,article]{memoir}
+\documentclass[a4paper,12pt]{memoir}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settypeblocksize{230mm}{130mm}{*}
+\setlrmargins{*}{*}{1.1}
+\setulmargins{30mm}{*}{*}
+\checkandfixthelayout%
+
+\setlength{\footmarkwidth}{0.5em}
+\setlength{\footmarksep}{0em}
+\setlength{\footparindent}{0em}
+\footmarkstyle{\textsuperscript{#1}\hspace{0.5em}}
+
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenfoot{plain}{\thepage}{}{}
+\makepagestyle{ruled}
+\makeevenfoot{ruled}{\thepage}{}{} % page numbers at the outside
+\makeoddfoot{ruled}{}{}{\thepage}
+\makeheadrule{ruled}{\textwidth}{0.75pt}
+\makeevenhead{ruled}{\scshape\leftmark}{}{}
+\makeoddhead{ruled}{}{}{\scshape\rightmark}
+\makepsmarks{ruled}{%
+        \nouppercaseheads
+        \createmark{chapter}{left}{shownumber}{\scshape}{.\space}
+        \createmark{part}{right}{shownumber}{}{.\space}
+        \createmark{section}{right}{shownumber}{}{.\space}
+        \createmark{subsection}{right}{shownumber}{}{.\space}
+        \createplainmark{toc}{both}{\contentsname}
+        \createplainmark{lof}{both}{\listfigurename}
+        \createplainmark{lot}{both}{\listtablename}
+        \createplainmark{bib}{both}{\bibname}
+        \createplainmark{index}{both}{\indexname}
+        \createplainmark{glossary}{both}{\glossaryname}
+}
+
+% Decorando divisões
+\chapterstyle{hangnum}
+\setsecnumdepth{subsection}
+\setcounter{tocdepth}{3}
+\newcommand\chap[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}}
+
+
+\usepackage{paralist}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage{linguex}
+
+% Paleta de cores
+\usepackage{xcolor}
+\definecolor{green}{RGB}{16,87,87} % rgb(16,87,87)
+\definecolor{red}{RGB}{193, 11, 105} % rgb(193, 11, 105)
+\definecolor{yellow}{RGB}{218,222,104} % rgb(218,222,104)
+\definecolor{pink}{RGB}{243,179,145} % rgb(243,179,145)
+\definecolor{blue}{RGB}{161,184,206} % rgb(161,184,206)
+
+\usepackage{hyperref}%
+\hypersetup{%
+        colorlinks=true, % false: boxed links; true: colored links
+        linkcolor=green,  % color of internal links
+        citecolor=green,  % color of links to bibliography
+        filecolor=pink,  % color of file links
+        urlcolor=green,
+        bookmarksdepth=4
+}
+
+\newcommand{\Prep}{\footnotesize\textsc{Prep.}}
+\newcommand{\Det}{\footnotesize\textsc{Det.}}
+\newcommand{\Clt}{\footnotesize\textsc{Clt.}}
+\newcommand{\Nom}{\footnotesize\textsc{Nom.}}
+\newcommand{\Acu}{\footnotesize\textsc{Acu.}}
+\newcommand{\Dat}{\footnotesize\textsc{Dat.}}
+\newcommand{\Gen}{\footnotesize\textsc{Gen.}}
+\newcommand{\Abl}{\footnotesize\textsc{Abl.}}
+\newcommand{\Sg}{\footnotesize\textsc{Sg.}}
+\newcommand{\Pl}{\footnotesize\textsc{Pl.}}
+\newcommand{\Com}{\footnotesize\textsc{Com.}}
+\newcommand{\Neut}{\footnotesize\textsc{Neut.}}
 
 \usepackage{csquotes}
 \usepackage{fontspec}
@@ -6,11 +84,26 @@
 % \defaultfontfeatures{Renderer=Harfbuzz}
 
 \babelfont[brazil]{rm}[
-	Numbers=OldStyle,
 	SmallCapsFont=Gentium Plus,
 	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
 \babelfont[brazil]{sf}{Noto Sans}
 \babelfont[brazil]{tt}{Mononoki Nerd Font}
+
+\babelfont[german]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[brazil]{sf}{Noto Sans}
+\babelfont[brazil]{tt}{Mononoki Nerd Font}
+
+\babelfont[english]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[brazil]{sf}{Noto Sans}
+\babelfont[brazil]{tt}{Mononoki Nerd Font}
+
+\hyphenation{
+	hi-e-ro-glí-fi-co
+}
 
 \babelprovide[import, onchar=ids fonts letters]{ancientgreek}
 \babelfont[ancientgreek]{rm}{Brill}
@@ -25,16 +118,15 @@
 \babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
 \babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
 
-\usepackage{hyperref}%
 
-\title{Luvita Hieroglífico -- Aula 01}
-\author{Caio Geraldes }
+\title{Luvita Hieroglífico}
+\author{Caio Geraldes}
 
 \usepackage[backend=biber,
 	style=abnt,
 	repeatfields,
 	ittitles,
-	% indent,
+	indent,
 	giveninits,
 	justify,
 	noslsn,
@@ -43,40 +135,67 @@
 ]{biblatex}
 \addbibresource{../../Bibliografia/biblio.bib}
 
-
 \renewcommand{\maketitle}{
-    \noindent{\huge\thetitle}
-    \vspace{0.75\baselineskip}
+ \thispagestyle{empty}
+ \vfill{}
+ \noindent{\huge\thetitle}
+ \vspace{0.75\baselineskip}
 
- \noindent{\Large{}Gramática: Sistema de escrita, flexão nominal}
+ \noindent{\Large{}Gramática e leitura}
 
-    \vspace{0.25\baselineskip}
+ \vspace{0.75\baselineskip}
 
-    \noindent{\Large Leitura: BABYLON 3}
+ \noindent{\large\theauthor} -- \href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
 
-    \vspace{0.75\baselineskip}
-
-    \noindent{\large\theauthor} -- \href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
-
-    \vspace*{2\baselineskip}
-    \thispagestyle{title}
+ \vfill{}
 }
 
 \usepackage{lipsum}
 
+\pagestyle{companion}
+
+\newcommand{\colofao}[0]{
+    \pagestyle{empty}
+    \cleartoevenpage%
+    \hfill
+    \vfill
+        \begin{adjustwidth}{5em}{5em}
+            \begin{center}
+            \noindent Esse documento foi diagramado usando o sistema
+						\href{https://lualatex.org}{Lua\TeX} mantido por Manuel
+						Pégourié-Gonnard. Todos os \emph{softwares} utilizados na
+						diagramação deste document são gratuitos e \emph{open source}.\par
+            {\today.}
+            \end{center}
+        \end{adjustwidth}
+    \bigskip
+    \noindent
+}
+
+
 \begin{document}
+
+\setlength{\Exlabelsep}{0.5em}
+\setlength{\SubExleftmargin}{1.5em}
+\frontmatter
 \maketitle
 
+\clearpage
+\tableofcontents*
 
-\chapter{Introdução: quem, quando e onde?}
+\mainmatter%
 
 
-\textbf{Luvita} denota um povo e uma língua e seus dialetos cuja existência,
+\chap{Introdução}
+
+\section{Quem, quando e onde?}
+
+\emph{Luvita} denota um povo e uma língua e seus dialetos cuja existência,
 até o começo do século passado, estava perdida na história.\footnote{Esta seção
 	está baseada sobretudo em \textcite{CHLI_1_1,Melchert2003,Hoffner2008}.}
 Quando no final do século \textsc{xix} foram encontrados blocos de pedra no
 norte da Síria com inscrições em hieroglifos em alto relevo, associaram esta
-nova língua e o povo que a escreveu com os \textbf{hititas}, um povo que até
+nova língua e o povo que a escreveu com os \emph{hititas}, um povo que até
 então era lembrado por passagens da bíblia hebraica e alguns documentos
 recentemente descobertos em assírio.
 Em 1906, as escavações realizadas em Boğazköy\slash{}Boğazkale sob deiração de
@@ -92,14 +211,112 @@ língua nesses arquivos e em duas cartas previamente escavadas em
 \href{https://pleiades.stoa.org/places/149576487}{Tell el-Amarna}
 (Egito moderno) era uma língua indo-europeia e produzir um esboço gramatical
 dela, identificando-a como a língua dos hititas.
-A língua dos hieróglifos sírios passou a ser conhecida por ``hitita
-hieroglífico'' e, de sua descoberta até a década de 20, os textos permaneceram
-praticamente ilegíveis.\footnote{Alguns sinais tinham sido corretamente
-	interpretados por Sayce entre 1882 e 1884, a saber os logogramas L.17 𔐑
-	\textsc{rex} e L.228 𔔆 \textsc{regio}, respectivamente correspondentes aos
-	cuneiformes \foreignlanguage{hittite}{𒈗} \textsc{lugal} `rei' e
-	\foreignlanguage{hittite}{𒆳} \textsc{kur} `país\slash{}território'.}
+Entre os textos em cuneiforme escavados em Boğazköy  entre 1906 e 22 revelaram
+dentro deles uma outra língua que viria a ser conhecida pelo nome de
+\emph{luvita}.\footnote{Alguns termos soltos dessa língua aparecem marcados com
+	um sinal cuneiforme, \foreignlanguage{hittite}{𒃵}, chamado pelo nome alemão
+	\emph{Glossenkeil} em meio a textos hititas.}
+
+A língua dos hieróglifos das inscrições sírias, no entanto, permaneceu
+praticamente ilegível desde sua descoberta até a década de 30.\footnote{Alguns
+	sinais tinham sido corretamente interpretados por Sayce entre 1882 e 1884, a
+	saber os logogramas L.17 𔐑 \textsc{rex} e L.228 𔔆 \textsc{regio},
+	respectivamente correspondentes aos cuneiformes \foreignlanguage{hittite}{𒈗}
+	\textsc{lugal} `rei' e \foreignlanguage{hittite}{𒆳} \textsc{kur}
+	`país\slash{}território'.}
+No começo da década de 30, contribuições separadas de Meriggi, Gelb, Forrer,
+Bossert e Hrozný ofereceram interpretação de diversos logogramas e
+interpretações ou, ao menos, aproximações para alguns silabogramas,
+permitindo as primeiras tentativas de interpretação.
+No começo da década de 40, Güterbock compila selos contendo escrita cuneiforme e
+hieroglífica e avança na interpretação dos grafemas.
+Entre 1946 e 1960, Bossert passa a publicar a inscrição bilíngue em hieróglifos
+e em fenício descoberta por ele e Halet Çambel em Karatepe.
+
+\noindent Datas:
+\begin{compactenum}
+	\item Imperial: séc. \textsc{xiii aec}, entre as dinastinas de Tudhaliya IV e
+	Suppiluliuma II
+	\item Neo-hitita: \emph{circa} 1100-700 \textsc{aec}
+\end{compactenum}
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{../../Mídia/Map01.png}
+	\end{center}
+	\caption{Mapa contendo a localização das inscrições monumentais em luvita
+		hieroglífico. Os pontos laranjas representam inscrições do período imperial
+		enquanto os verdes, inscrições do período neo-hitita.}\label{fig:mapa1}
+\end{figure}
+
+\chapter{Sistema de escrita, fonologia e flexão nominal}
+
+\section{Sistema de escrita}
+
+\lipsum[4]
+
+\section{Fonologia}
+
+\lipsum[3]
+
+\section{Flexão nominal}
+
+\lipsum[1]
+
+\section{Leitura: BABYLON 3}
+
+Trata-se de um vaso em estado fragmentário (quatro pedaços) escavado por
+Koldewey na década de 20 onde se acredita ser a cidade de Babilônia, sítio
+arqueológico de Arpada, noroeste de Aleppo (Síria), contendo uma inscrição no
+beiral em cursivas de baixo relevo, sentido sinistroverso, em duas linhas a
+serem lidas em conjunto (para cada coluna, lê-se o caractere na primeira linha,
+em seguida o da segunda linha e assim sucessivamente).
+
+\begin{figure}[ht!]
+	\begin{center}
+		\includegraphics[width=\textwidth]{../../Mídia/aleppo23.jpg}
+	\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{../../Mídia/babylon3.png}
+	\end{center}
+	\caption{Babylon 3. Diâmetro: 0.66m.; Profundidade (interna): 0.67m. Imagens
+		produzidas e traçado feito por \textcite[\emph{plate} 212]{CHLI_1_3}.
+		Atualmente no \foreignlanguage{german}{Vorderasiatisches Museum}, Berlin, no. VA Bab. 1507.}\label{fig:babylon3}
+\end{figure}
+
+
+\ex.\ag.{\Large 𔖪𔓱𔗬𔗷} {\Large 𔗎𔔯𔗏𔗧𔑣𔐤} {\Large 𔑵𔑣𔓱𔗔} {\Large 𔓢𔑞𔕸𔗐} {\Large 𔖖𔓢𔕙𔑣}
+{\Large 𔐎𔐤} {\Large [𔑇]𔗬𔑯}\\
+za-ia-wa/i-a\hspace{10pt} ``SCALPRUM''-ka-ti-na\hspace{10pt}
+CERVUS\textsubscript{2}-ti-ia-sa\hspace{10pt} TONITRUS.HALPA-pa-ni\hspace{10pt}
+DEUS.TONITRUS-hu-ti\hspace{10pt} PRAE-na\hspace{10pt} [PONERE]-wa/i-ta\\
+zaya=wa katin(a) Runtiyas halpawani Tarhu(n)ti paran tuwa-ta
+\bg. zaya=wa katin(a) Runtiyas halpawani Tarhu(n)ti paran tuwata\\
+\Det{}\Acu{} vasilha.\Neut{}\Acu{} R.\Com{}\Nom{} halabeu.\Dat{} T.\Dat{} \Prep{} colocar-3\Sg\\
+Esta vaso Runtiyas colocou em frente (=dedicou) ao Tarhunta halabeu.
+
+
+\backmatter%
+
+
+\chap{Vocabulário}
+
+{
+	\normalsize
+	kati- (subst. \Neut) vaso, vasilha\\
+	Runtiya- (nome próprio. \Com) Runtiya\\
+	halpawan- (adj.) proveniente de Halpa; halabeu\\
+	Tarhu(n)t- (nome próprio, teônimo) Tarhunta\\
+	paran (\Prep) em frente a\\
+	tuwa- (v.)\\
+}
+
+\chap{Glossário}
+
+\nocite{*}
 
 \printbibliography%
+
+\colofao{}
 
 \end{document}
