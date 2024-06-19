@@ -2,11 +2,16 @@
 \documentclass[a4paper,12pt]{memoir}
 
 \settrimmedsize{\stockheight}{\stockwidth}{*}
-\settypeblocksize{230mm}{130mm}{*}
-\setlrmargins{*}{*}{1.1}
+\settypeblocksize{220mm}{130mm}{*}
+\setlrmargins{*}{*}{1.7}
 \setulmargins{30mm}{*}{*}
+\setmarginnotes{20pt}{100pt}{10pt}
 \checkandfixthelayout%
 
+% \setsidefeet{\marginparsep}{\marginparwidth}%
+% {0.8\onelineskip}{0pt}%
+% {\normalfont\footnotesize}{\textheight}%
+\setsidecaps{\marginparsep}{\marginparwidth}
 \setlength{\footmarkwidth}{0.5em}
 \setlength{\footmarksep}{0em}
 \setlength{\footparindent}{0em}
@@ -39,7 +44,7 @@
 \setsecnumdepth{subsection}
 \setcounter{tocdepth}{3}
 \newcommand\chap[1]{%
-  \chapter*{#1}%
+  \chapter*[#1]{#1}%
   \addcontentsline{toc}{chapter}{#1}}
 
 
@@ -82,7 +87,9 @@
 \usepackage{csquotes}
 \usepackage{fontspec}
 \usepackage[main=brazil]{babel}
-% \defaultfontfeatures{Renderer=Harfbuzz}
+\defaultfontfeatures{Renderer=Harfbuzz}
+
+\usepackage{indentfirst}
 
 \babelfont[brazil]{rm}[
 	SmallCapsFont=Gentium Plus,
@@ -104,6 +111,9 @@
 
 \hyphenation{
 	hi-e-ro-glí-fi-co
+  HAL-PA
+  Tar-hun-ta
+  tex-to
 }
 
 \babelprovide[import, onchar=ids fonts letters]{ancientgreek}
@@ -119,6 +129,7 @@
 \babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
 \babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
 
+\usepackage{scalefnt}
 
 \title{Luvita Hieroglífico}
 \author{Caio Geraldes}
@@ -136,20 +147,29 @@
 ]{biblatex}
 \addbibresource{../../Bibliografia/biblio.bib}
 
-\renewcommand{\maketitle}{
- \thispagestyle{empty}
- \vfill{}
- \noindent{\huge\thetitle}
- \vspace{0.75\baselineskip}
+\newcommand{\thetitlepage}{{
+  \thispagestyle{empty}
+  \flushright%
+  \vspace*{45mm}
+  \noindent {\scalefont{10}\thetitle}
+  \vfill
 
- \noindent{\Large{}Gramática e leitura}
+  
+  \noindent\scalefont{1.7}Gramática e leitura
 
- \vspace{0.75\baselineskip}
+  \vspace{0.75\onelineskip}
 
- \noindent{\large\theauthor} -- \href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
+  \noindent\theauthor%
 
- \vfill{}
-}
+  \vspace{0.5\onelineskip}
+
+  \noindent\scalefont{0.8}\href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
+  
+
+  \vfill{}
+  2024
+
+}}
 
 \usepackage{lipsum}
 
@@ -180,9 +200,10 @@
 \setlength{\SubExleftmargin}{1.5em}
 
 \frontmatter
-\maketitle
 
-\clearpage
+\thetitlepage%
+
+\cleardoublepage%
 \tableofcontents*
 
 \mainmatter%
