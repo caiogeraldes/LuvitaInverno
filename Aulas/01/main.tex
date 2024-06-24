@@ -69,6 +69,12 @@
         filecolor=pink,  % color of file links
         urlcolor=green,
 }
+% Configurações para o autoref
+\renewcommand{\figureautorefname}{Figura}
+\renewcommand{\tableautorefname}{Tabela}
+\renewcommand{\sectionautorefname}{Seção}
+\renewcommand{\chapterautorefname}{Capítulo}
+\renewcommand{\subsectionautorefname}{Subseção}
 
 \newcommand{\Prep}{\footnotesize\textsc{Prep.}}
 \newcommand{\Det}{\footnotesize\textsc{Det.}}
@@ -113,6 +119,10 @@
   HAL-PA
   Tar-hun-ta
   tex-to
+  hie-ro-gly-phen
+  lu-wi-schen
+  Bo-ğaz-köy
+  Lu-wian
 }
 
 \babelprovide[import, onchar=ids fonts letters]{ancientgreek}
@@ -208,8 +218,8 @@
 \mainmatter%
 
 
-\chapter*{Introdução}
-\input{./chaps/00_intro.tex}
+% \chapter*{Introdução}
+% \input{./chaps/00_intro.tex}
 
 \chapter{Sistema de escrita, fonologia e flexão nominal}
 \input{./chaps/01_aula1.tex}
