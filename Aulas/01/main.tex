@@ -8,19 +8,7 @@
 \usepackage{linguex}
 
 \usepackage{hyperref}%
-\hypersetup{%
-        colorlinks=true, % false: boxed links; true: colored links
-        linkcolor=green,  % color of internal links
-        citecolor=green,  % color of links to bibliography
-        filecolor=pink,  % color of file links
-        urlcolor=green,
-}
-% Configurações para o autoref
-\renewcommand{\figureautorefname}{Figura}
-\renewcommand{\tableautorefname}{Tabela}
-\renewcommand{\sectionautorefname}{Seção}
-\renewcommand{\chapterautorefname}{Capítulo}
-\renewcommand{\subsectionautorefname}{Subseção}
+\input{./utils/hyperref.tex}
 
 \newcommand{\Prep}{\footnotesize\textsc{Prep.}}
 \newcommand{\Det}{\footnotesize\textsc{Det.}}
@@ -38,38 +26,7 @@
 \usepackage{csquotes}
 \usepackage{fontspec}
 \usepackage[main=brazil]{babel}
-\defaultfontfeatures{Renderer=Harfbuzz}
-
-\babelfont[brazil]{rm}[
-	SmallCapsFont=Gentium Plus,
-	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
-\babelfont[brazil]{sf}{Noto Sans}
-\babelfont[brazil]{tt}{Mononoki Nerd Font}
-
-\babelfont[german]{rm}[
-	SmallCapsFont=Gentium Plus,
-	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
-\babelfont[brazil]{sf}{Noto Sans}
-\babelfont[brazil]{tt}{Mononoki Nerd Font}
-
-\babelfont[english]{rm}[
-	SmallCapsFont=Gentium Plus,
-	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
-\babelfont[brazil]{sf}{Noto Sans}
-\babelfont[brazil]{tt}{Mononoki Nerd Font}
-
-\babelprovide[import, onchar=ids fonts letters]{ancientgreek}
-\babelfont[ancientgreek]{rm}{Brill}
-\babeltags{grc = ancientgreek}
-
-\input{./utils/luwian.tex}
-
-\babelprovide{hittite}
-\babelfont[hittite]{rm}{UllikummiA}
-
-\babelprovide[import,onchar=ids fonts]{sanskrit}
-\babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
+\input{./utils/babel.tex}
 
 \usepackage{hyphenat}
 \input{./utils/hyphen.tex}
