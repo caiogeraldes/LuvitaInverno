@@ -1,0 +1,83 @@
+%! TeX program = lualatex
+\documentclass[a4paper,12pt,article]{memoir}
+
+\input{./utils/style.tex}
+
+\usepackage{paralist}
+\usepackage{graphicx}
+\usepackage{linguex}
+
+\usepackage{hyperref}%
+\input{./utils/hyperref.tex}
+
+\newcommand{\Prep}{\footnotesize\textsc{Prep.}}
+\newcommand{\Det}{\footnotesize\textsc{Det.}}
+\newcommand{\Clt}{\footnotesize\textsc{Clt.}}
+\newcommand{\Nom}{\footnotesize\textsc{Nom.}}
+\newcommand{\Acu}{\footnotesize\textsc{Acu.}}
+\newcommand{\Dat}{\footnotesize\textsc{Dat.}}
+\newcommand{\Gen}{\footnotesize\textsc{Gen.}}
+\newcommand{\Abl}{\footnotesize\textsc{Abl.}}
+\newcommand{\Sg}{\footnotesize\textsc{Sg.}}
+\newcommand{\Pl}{\footnotesize\textsc{Pl.}}
+\newcommand{\Com}{\footnotesize\textsc{Com.}}
+\newcommand{\Neut}{\footnotesize\textsc{Neut.}}
+
+\usepackage{csquotes}
+\usepackage{fontspec}
+\usepackage[main=brazil]{babel}
+\input{./utils/babel.tex}
+
+\usepackage{hyphenat}
+\input{./utils/hyphen.tex}
+
+\title{Luvita Hieroglífico: Introdução}
+\author{Caio Geraldes}
+
+\usepackage[backend=biber,
+	style=abnt,
+	repeatfields,
+	ittitles,
+	indent,
+	giveninits,
+	justify,
+	noslsn,
+	natbib,
+	extrayear,
+]{biblatex}
+\addbibresource{../../Bibliografia/biblio.bib}
+
+
+\usepackage{tikz} %for all basic options
+\usepackage{tikz-qtree} %for simple tree syntax
+\usepgflibrary{arrows} %for arrow endings
+\usetikzlibrary{positioning,shapes.multipart} %for structured nodes
+\usetikzlibrary{tikzmark}
+\usepackage{tree-dvips}
+
+\usepackage{multirow}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\setlength{\Exlabelsep}{0.5em}
+\setlength{\SubExleftmargin}{1.5em}
+
+\frontmatter
+
+\mainmatter%
+
+\maketitle
+
+\input{./chaps/00_intro.tex}
+
+\backmatter%
+
+\printbibliography%
+
+\clearpage
+\chap{Figuras}
+\input{./chaps/11_figuras.tex}
+
+\end{document}
