@@ -1,5 +1,5 @@
 %! TeX program = lualatex
-\documentclass[a4paper,12pt]{memoir}
+\documentclass[a4paper,12pt,article]{memoir}
 
 \input{./utils/style.tex}
 
@@ -31,7 +31,7 @@
 \usepackage{hyphenat}
 \input{./utils/hyphen.tex}
 
-\title{Luvita Hieroglífico}
+\title{Luvita Hieroglífico: Aula 1}
 \author{Caio Geraldes}
 
 \usepackage[backend=biber,
@@ -66,34 +66,14 @@
 
 \frontmatter
 
-\thetitlepage%
-
-\cleardoublepage%
-\tableofcontents*
-
 \mainmatter%
 
+\maketitle
 
-\chap{Introdução}
-\input{./chaps/00_intro.tex}
-
-\chapter{Sistema de escrita, fonologia e flexão nominal}
 \input{./chaps/01_aula1.tex}
-
 
 \backmatter%
 
-
-% \chap{Vocabulário}
-% \input{./chaps/vocab.tex}
-%
-%
-% \chap{Glossário}
-
 \printbibliography%
-
-\cleardoublepage%
-
-\colofao{}
 
 \end{document}

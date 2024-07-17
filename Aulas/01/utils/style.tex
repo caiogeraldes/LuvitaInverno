@@ -39,7 +39,6 @@
 }
 
 % Decorando divisões
-\chapterstyle{hangnum}
 \setsecnumdepth{subsection}
 \setcounter{tocdepth}{3}
 \newcommand\chap[1]{%
@@ -57,49 +56,4 @@
 
 \usepackage[tracking=true]{microtype}
 
-\newcommand{\colofao}[0]{
-	\pagestyle{empty}
-	\cleartoevenpage%
-	\hfill
-	\vfill
-	\begin{adjustwidth}{5em}{5em}
-		\begin{center}
-			\noindent Esse documento foi diagramado usando o sistema
-			\href{https://lualatex.org}{Lua\TeX} mantido por Manuel
-			Pégourié-Gonnard. Todos os \emph{softwares} utilizados na
-			diagramação deste document são gratuitos e \emph{open source}.\par
-			{\today.}
-		\end{center}
-	\end{adjustwidth}
-	\bigskip
-	\noindent
-}
-
-\newcommand{\thetitlepage}{
-	{
-			\thispagestyle{empty}
-			\flushright%
-			\vspace*{45mm}
-			\noindent {\scalefont{10}\thetitle}
-			\vfill
-
-
-			\noindent\scalefont{1.7}Gramática e leitura
-
-			\vspace{0.75\onelineskip}
-
-			\noindent\theauthor%
-
-			\vspace{0.5\onelineskip}
-
-			\noindent\scalefont{0.8}\href{mailto:caio.geraldes@usp.br}{\texttt{<caio.geraldes@usp.br>}}
-
-
-			\vfill{}
-			2024
-
-		}
-}
-
 \usepackage{scalefnt}
-\pagestyle{companion}
