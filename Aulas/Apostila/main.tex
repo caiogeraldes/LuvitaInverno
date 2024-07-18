@@ -1,6 +1,14 @@
 %! TeX program = lualatex
 \documentclass[a4paper,12pt]{memoir}
 
+\directlua{dofile('./utils/pie.lua')}
+\newcommand{\hittitetrans}[1]{%
+  \directlua{hittite_transcription("#1")}}
+\newcommand{\luwiantrans}[1]{%
+  \directlua{luwian_transcription("#1")}}
+\newcommand{\pietrans}[1]{%
+  \directlua{pie_transcription("#1")}}
+
 \input{./utils/style.tex}
 
 \usepackage{paralist}
