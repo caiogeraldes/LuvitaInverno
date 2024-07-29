@@ -8,7 +8,7 @@ USP](https://sce.fflch.usp.br) em 2024.
 
 Os documentos contendo os _handouts_ e a apostila (_em preparação_) podem ser
 encontrados em [Aulas/PDF](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/PDFS) e os slides em [Aulas/Slides](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/Slides).
-A ementa do curso e bibliografia podem ser encontradas nas pastas [Ementa](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/Ementa) e [Bibliografia](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Bibliografia)
+A ementa do curso e bibliografia podem ser encontradas nas pastas [Ementa](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/Ementa) e [Bibliografia](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Bibliografia).
 
 Todo o material está disponibilizado gratuitamente e com código aberto para
 aqueles que tiverem interesse.
