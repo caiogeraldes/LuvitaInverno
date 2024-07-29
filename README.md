@@ -12,7 +12,7 @@ A ementa do curso e bibliografia podem ser encontradas nas pastas [Ementa](https
 
 Todo o material está disponibilizado gratuitamente e com código aberto para
 aqueles que tiverem interesse.
-Ver abaixo **Licença** para detalhes sobre direitos de uso.
+Ver abaixo [Licença](https://github.com/caiogeraldes/LuvitaInverno?tab=readme-ov-file#licen%C3%A7a) para detalhes sobre direitos de uso.
 Incluo uma cópia em português no repositório de todo modo.
 
 
