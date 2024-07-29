@@ -4,7 +4,7 @@
 
 Este repositório contém todos os documentos utilizados no curso de inverno
 _Luvita Hieroglífico_ oferecido pelo [Serviço de Cultura e Extensão - FFLCH
-USP](sce.fflch.usp.br) em 2024.
+USP](https://sce.fflch.usp.br) em 2024.
 
 Os documentos contendo os _handouts_ e a apostila (_em preparação_) podem ser
 encontrados em [Aulas/PDF](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/PDFS) e os slides em [Aulas/Slides](https://github.com/caiogeraldes/LuvitaInverno/tree/main/Aulas/Slides).
