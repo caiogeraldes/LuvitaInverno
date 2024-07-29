@@ -14,7 +14,8 @@
 \usepackage{paralist}
 \usepackage{graphicx}
 \usepackage{linguex}
-
+\usepackage{longtable}
+\usepackage{multicol}
 \usepackage{hyperref}%
 \input{./utils/hyperref.tex}
 
@@ -30,6 +31,7 @@
 \newcommand{\Pl}{{\footnotesize\textsc{Pl.}}}
 \newcommand{\Com}{{\footnotesize\textsc{Com.}}}
 \newcommand{\Neut}{{\footnotesize\textsc{Neut.}}}
+\newcommand{\La}[1]{\textsc{l}.#1}
 
 \usepackage{csquotes}
 \usepackage{fontspec}
@@ -75,6 +77,11 @@
 \frontmatter
 
 \thetitlepage%
+
+
+\cleardoublepage%
+\chap{Abreviações}
+\input{./chaps/99_abreviações.tex}
 
 \cleardoublepage%
 \tableofcontents*
