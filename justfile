@@ -12,7 +12,7 @@ build target:
     lualatex main.tex
     lualatex main.tex
     cd {{rootdir}}
-    cp {{aulassrc}}{{target}}"/main.pdf"  {{aulaspdfs}}{{target}}".pdf"
+    mv {{aulassrc}}{{target}}"/main.pdf"  {{aulaspdfs}}{{target}}".pdf"
 
 biblio:
     #!/usr/bin/env bash
