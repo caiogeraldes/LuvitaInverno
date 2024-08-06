@@ -4,9 +4,18 @@
 \usepackage{paralist}
 \usepackage{graphicx}
 \usepackage{linguex}
+\usepackage{multicol}
 
 \usepackage{hyperref}%
 \input{./utils/hyperref.tex}
+
+\directlua{dofile('./utils/pie.lua')}
+\newcommand{\hittitetrans}[1]{%
+  \directlua{hittite_transcription("#1")}}
+\newcommand{\luwiantrans}[1]{%
+  \directlua{luwian_transcription("#1")}}
+\newcommand{\pietrans}[1]{%
+  \directlua{pie_transcription("#1")}}
 
 \newcommand{\Prep}{{\footnotesize\textsc{Prep.}}}
 \newcommand{\Det}{{\footnotesize\textsc{Det.}}}
@@ -46,6 +55,8 @@
 	extrayear,
 ]{biblatex}
 \addbibresource{../../../Bibliografia/biblio.bib}
+\input{./utils/cite.tex}
+\newcommand{\GrHL}[1]{\citeabbrev*{Hoffner2008} #1}
 
 
 \usepackage{tikz} %for all basic options
@@ -67,6 +78,7 @@
 \mainmatter%
 
 \maketitle
+
 
 \input{./chaps/02_aula2.tex}
 

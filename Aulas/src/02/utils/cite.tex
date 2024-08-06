@@ -1,0 +1,11 @@
+\DeclareCiteCommand*{\citeabbrev}%your new citecommand \citetitle*
+{\boolfalse{citetracker}%
+	\boolfalse{pagetracker}%
+	\usebibmacro{prenote}}
+{\ifciteindex%
+	{\indexfield{indextitle}}
+	{}%
+	\printtext[bibhyperref]{\printfield{shorttitle}}}%like \citetile, 
+%only added \printtext[bibhyperref]{...} in this line
+{\multicitedelim}
+{}
