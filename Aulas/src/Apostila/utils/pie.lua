@@ -81,6 +81,7 @@ function luwian_transcription(v)
 	s = string.gsub(s, "%*4", "𔐃") -- L.4
 
 	-- Not organized
+	s = string.gsub(s, "MAGNUS", "𔖙") -- L.363
 	s = string.gsub(s, "CERVUS2", "𔑵")
 	s = string.gsub(s, "HALPA", "𔑞")
 	s = string.gsub(s, "PONERE", "𔑇")
@@ -91,6 +92,9 @@ function luwian_transcription(v)
 	s = string.gsub(s, "TONITRUS", "𔓢")
 	s = string.gsub(s, "URBS", "𔔂")
 	s = string.gsub(s, "SCALPRUM", "𔔯")
+	s = string.gsub(s, "AEDIFICARE", "𔔘") -- L.246
+	s = string.gsub(s, "CASTRUM", "𔔉") -- L.231
+	s = string.gsub(s, "FLUMEN", "𔓳") -- L.212
 
 	-- Special substitutions
 	s = string.gsub(s, "-'", "-a")
