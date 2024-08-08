@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{linguex}
 \usepackage{multicol}
+\usepackage{tabto}
 
 \usepackage{hyperref}%
 \input{./utils/hyperref.tex}
@@ -37,6 +38,23 @@
 \newcommand{\Pro}{{\footnotesize\textsc{Pro.}}}
 \newcommand{\Refl}{{\footnotesize\textsc{Refl.}}}
 \newcommand{\La}[1]{\textsc{l}.#1}
+\newcommand{\logo}[1]{\textnormal{#1}}
+\newcommand{\spac}{\textsuperscript{\textnormal{I}}}
+\newcommand{\lmasc}{\textnormal{|}}
+\newcommand{\lbreak}{\hspace{2pt}\textnormal{||}\hspace{2pt}}
+\newcommand{\parnumr}[2]{#1 \Roman{parcount}}
+\newcommand{\parnuma}[2]{#1 \arabic{parcount}}
+\newcounter{parcount}
+\newenvironment{parnumbersa}[1][§]{%
+   \par%
+	 \everypar{\hangpara{3em}{1}\stepcounter{parcount} \textnormal{\normalsize\parnuma{#1}}
+	 \tabto{2em}}%
+}{}
+\newenvironment{parnumbersr}[2][§]{%
+   \par%
+	 \everypar{\hangpara{3em}{1}\stepcounter{parcount} \textnormal{\normalsize\parnumr{#1}}
+	 \tabto{2em}}%
+}{}
 
 \usepackage{csquotes}
 \usepackage{fontspec}
