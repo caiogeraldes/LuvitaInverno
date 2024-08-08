@@ -39,6 +39,17 @@
 \newcommand{\Pro}{{\footnotesize\textsc{Pro.}}}
 \newcommand{\Refl}{{\footnotesize\textsc{Refl.}}}
 \newcommand{\La}[1]{\textsc{l}.#1}
+\newcommand{\parnum}{§ \Roman{parcount}}
+\newcounter{parcount}
+\newcommand\p{%
+    \stepcounter{parcount}%
+		\textnormal{\parnum{}} \hspace{1em}%
+}
+\newenvironment{parnumbers}{%
+   \par%
+	 \everypar{\hangpara{6em}{1}\stepcounter{parcount} \textnormal{\parnum{}}
+	 \tabto{3em}}%
+}{}
 
 \usepackage{csquotes}
 \usepackage{fontspec}

@@ -2,20 +2,6 @@
 
 \chapter{Leitura: \logo{KARATEPE}}
 
-\newcommand{\parnum}{§ \Roman{parcount}}
-
-\newcounter{parcount}
-\newcommand\p{%
-    \stepcounter{parcount}%
-		\textnormal{\parnum{}} \hspace{1em}%
-}
-
-\newenvironment{parnumbers}{%
-   \par%
-	 \everypar{\hangpara{6em}{1}\stepcounter{parcount} \textnormal{\parnum{}}
-	 \tabto{3em}}%
-}{}
-
 \noindent\textbf{Hu 1}\\
 
 \begin{parnumbers}
