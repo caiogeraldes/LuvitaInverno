@@ -95,6 +95,7 @@ function luwian_transcription(v)
 	s = string.gsub(s, "AEDIFICARE", "𔔘") -- L.246
 	s = string.gsub(s, "CASTRUM", "𔔉") -- L.231
 	s = string.gsub(s, "FLUMEN", "𔓳") -- L.212
+	s = string.gsub(s, "MONS", "𔓬") -- L.207
 
 	-- Special substitutions
 	s = string.gsub(s, "-'", "-a")
