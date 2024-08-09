@@ -35,7 +35,7 @@ debug target:
 biblio:
     cd "Bibliografia/" && rm -f main.aux main.bbl main.bcf *.log main.bgl main.log main.out main.run.xml main.lof main.synctex.gz main.toc
     cd "Bibliografia/" && lualatex --interaction=batchmode --draftmode main.tex 
-    cd "Bibliografia/" && biber quiet main 
+    cd "Bibliografia/" && biber --quiet main 
     cd "Bibliografia/" && lualatex --interaction=batchmode --draftmode main.tex 
     cd "Bibliografia/" && lualatex --interaction=batchmode main.tex
     mv "Bibliografia/main.pdf" "Bibliografia/Bibliografia.pdf" 
