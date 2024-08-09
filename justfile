@@ -1,4 +1,3 @@
-rootdir := `pwd`
 aulassrc := "Aulas/src/"
 aulaspdfs := "Aulas/PDFS/"
 
@@ -9,22 +8,34 @@ all: (build "Apostila") (build "00_Introdução") (build "01") (build "02") (bui
 
 build target:
     cd {{aulassrc}}{{target}} && lualatex --interaction=batchmode --draftmode main.tex 
-    cd {{aulassrc}}{{target}} && biber main
+    cd {{aulassrc}}{{target}} && biber --quiet main
     cd {{aulassrc}}{{target}} && lualatex --interaction=batchmode --draftmode main.tex 
     cd {{aulassrc}}{{target}} && lualatex --interaction=batchmode main.tex
     mv {{aulassrc}}{{target}}"/main.pdf"  {{aulaspdfs}}{{target}}".pdf"
 
 debug target:
     cd {{aulassrc}}{{target}} && rm -f main.aux main.bbl main.bcf *.log main.bgl main.log main.out main.run.xml main.lof main.synctex.gz main.toc
-    cd {{aulassrc}}{{target}} && lualatex --interaction=nonstopmode --draftmode main.tex
+    cd {{aulassrc}}{{target}} && lualatex --halt-on-error --draftmode main.tex
+    rm -rdf debug/
+    mkdir -p debug/
+    cp -r {{aulassrc}}{{target}}/main.pdf debug/.
+    cp -r {{aulassrc}}{{target}}/main.log debug/.
     cd {{aulassrc}}{{target}} && biber main
-    cd {{aulassrc}}{{target}} && lualatex --interaction=nonstopmode --draftmode main.tex
-    cd {{aulassrc}}{{target}} && lualatex --interaction=nonstopmode main.tex
+    cd {{aulassrc}}{{target}} && lualatex --halt-on-error --draftmode main.tex
+    rm -rdf debug/
+    mkdir -p debug/
+    cp -r {{aulassrc}}{{target}}/main.pdf debug/.
+    cp -r {{aulassrc}}{{target}}/main.log debug/.
+    cd {{aulassrc}}{{target}} && lualatex --halt-on-error main.tex
+    rm -rdf debug/
+    mkdir -p debug/
+    cp -r {{aulassrc}}{{target}}/main.pdf debug/.
+    cp -r {{aulassrc}}{{target}}/main.log debug/.
 
 biblio:
     cd "Bibliografia/" && rm -f main.aux main.bbl main.bcf *.log main.bgl main.log main.out main.run.xml main.lof main.synctex.gz main.toc
     cd "Bibliografia/" && lualatex --interaction=batchmode --draftmode main.tex 
-    cd "Bibliografia/" && biber main 
+    cd "Bibliografia/" && biber quiet main 
     cd "Bibliografia/" && lualatex --interaction=batchmode --draftmode main.tex 
     cd "Bibliografia/" && lualatex --interaction=batchmode main.tex
     mv "Bibliografia/main.pdf" "Bibliografia/Bibliografia.pdf" 
