@@ -82,7 +82,8 @@ function luwian_transcription(v)
 
 	-- Not organized
 	s = string.gsub(s, "MAGNUS", "𔖙") -- L.363
-	s = string.gsub(s, "CERVUS2", "𔑵")
+	s = string.gsub(s, "CERVUS2", "𔑵") -- L.102
+	s = string.gsub(s, "CERVUS3", "𔑵") -- L.103
 	s = string.gsub(s, "HALPA", "𔑞")
 	s = string.gsub(s, "PONERE", "𔑇")
 	s = string.gsub(s, "PRAE", "𔐎")
@@ -96,6 +97,27 @@ function luwian_transcription(v)
 	s = string.gsub(s, "CASTRUM", "𔔉") -- L.231
 	s = string.gsub(s, "FLUMEN", "𔓳") -- L.212
 	s = string.gsub(s, "MONS", "𔓬") -- L.207
+	s = string.gsub(s, "HEROS", "𔐕") -- L.21
+	s = string.gsub(s, "OCCIDENS", "𔖬") -- L.379
+	s = string.gsub(s, "ORIENS", "𔓛") -- L.192
+	s = string.gsub(s, "AUDIREMI", "𔑒") -- L.73
+	s = string.gsub(s, "AUDIRE", "𔓅") -- L.70
+	s = string.gsub(s, "BONUS", "𔓀") -- L.165
+	s = string.gsub(s, "VIR2", "𔖶") -- L.386
+	s = string.gsub(s, "CAPERE", "𔐫") -- L.41
+	s = string.gsub(s, "TERRA", "𔓣") -- L.201
+	s = string.gsub(s, "LOCUS", "𔓣") -- L.201
+	s = string.gsub(s, "SUPER", "𔑏") -- L.70
+	s = string.gsub(s, "ANIMA", "𔗈") -- L.404
+	s = string.gsub(s, "LEO", "𔑪") -- L.97
+	s = string.gsub(s, "NEG2", "𔕶") -- L.332
+	s = string.gsub(s, "AVUS", "𔕳") -- L.331
+	s = string.gsub(s, "EQUUS", "𔑮") -- L.99
+	s = string.gsub(s, "PES2PES2", "𔑨") -- L.95
+	s = string.gsub(s, "CAPRA", "𔑶") -- L.104
+	s = string.gsub(s, "CENTUM", "𔗃") -- L.399
+	s = string.gsub(s, "UNUS", "𔖭") -- L.380
+	s = string.gsub(s, "1", "𔖭") -- L.380
 
 	-- Special substitutions
 	s = string.gsub(s, "-'", "-a")
