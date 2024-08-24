@@ -4,7 +4,7 @@ aulaspdfs := "Aulas/PDFS/"
 default:
     just --list
 
-all: (build "Apostila") (build "00_Introdução") (build "01") (build "02") (build "03") (build "Signário") biblio
+all: (build "Apostila") (build "00_Introdução") (build "01") (build "02") (build "03") (build "04") (build "Signário") biblio
 
 build target:
     cd {{aulassrc}}{{target}} && lualatex --interaction=batchmode --draftmode main.tex 

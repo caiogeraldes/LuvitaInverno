@@ -12,7 +12,8 @@
 \input{./utils/style.tex}
 
 \usepackage{ccicons}
-\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage[defblank]{paralist}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{eso-pic}
@@ -46,8 +47,12 @@
 \newcommand{\logo}[1]{\textnormal{#1}}
 \newcommand{\spac}{\textsuperscript{\textnormal{I}}}
 \newcommand{\lmasc}{\textnormal{|}}
+\newcommand{\Isep}{\textsuperscript{I}}
 \newcommand{\luwmasc}{{\textsuperscript{𔖶}}}
 \newcommand{\lbreak}{\hspace{2pt}\textnormal{||}\hspace{2pt}}
+\newcommand{\ipa}[1]{\foreignlanguage{ipa}{#1}}
+\newcommand{\pie}{\textsc{pie}}
+\newcommand{\pac}{\textsc{pac}}
 \newcommand{\parnumr}[2]{#1 \Roman{parcount}}
 \newcommand{\parnuma}[2]{#1 \arabic{parcount}}
 \newcounter{parcount}
@@ -137,6 +142,9 @@
 
 \chapter{Sintaxe}
 \input{./chaps/03_aula3.tex}
+
+\chapter{Fonologia histórica}
+\input{./chaps/04_aula4.tex}
 
 \backmatter%
 
