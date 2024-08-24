@@ -1,0 +1,142 @@
+
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R é um software livre e vem sem GARANTIA ALGUMA.
+Você pode redistribuí-lo sob certas circunstâncias.
+Digite 'license()' ou 'licence()' para detalhes de distribuição.
+
+R é um projeto colaborativo com muitos contribuidores.
+Digite 'contributors()' para obter mais informações e
+'citation()' para saber como citar o R ou pacotes do R em publicações.
+
+Digite 'demo()' para demonstrações, 'help()' para o sistema on-line de ajuda,
+ou 'help.start()' para abrir o sistema de ajuda em HTML no seu navegador.
+Digite 'q()' para sair do R.
+
+[Área de trabalho anterior carregada]
+
+> library("tidyverse")
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4          ✔ readr     2.1.5     
+✔ forcats   1.0.0          ✔ stringr   1.5.1.9000
+✔ ggplot2   3.5.1          ✔ tibble    3.2.1     
+✔ lubridate 1.9.3          ✔ tidyr     1.3.1     
+✔ purrr     1.0.2          
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library("rnaturalearthdata")
+> library("rnaturalearth")
+
+Anexando pacote: ‘rnaturalearth’
+
+O seguinte objeto é mascarado por ‘package:rnaturalearthdata’:
+
+    countries110
+
+> library("sf")
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+> library("ggrepel")
+> 
+> theme_set(theme_bw())
+> 
+> cor_bege <- "#f4f0e1"
+> cor_azul <- "#c9f2f2"
+> 
+> world <- ne_countries(scale = "large", returnclass = "sf")
+> 
+> coastline <- ne_coastline(scale = "large", returnclass = "sf")
+> 
+> rivers <- ne_download(
++   type = "rivers_lake_centerlines",
++   category = "physical",
++   scale = 10
++ )["geometry"]
+tentando a URL 'https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_rivers_lake_centerlines.zip'
+Content type 'application/zip' length 2079507 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+Reading layer `ne_10m_rivers_lake_centerlines' from data source 
+  `/tmp/RtmplAcyf2/ne_10m_rivers_lake_centerlines.shp' using driver `ESRI Shapefile'
+Simple feature collection with 1473 features and 38 fields
+Geometry type: MULTILINESTRING
+Dimension:     XY
+Bounding box:  xmin: -164.9035 ymin: -52.15775 xmax: 177.5204 ymax: 75.79348
+Geodetic CRS:  WGS 84
+> 
+> places <- tribble(
++   ~name, ~y, ~x, ~fase,
++   "Hama", 35.1329746, 36.7488012, "Neo-hitita",
++   "Aleppo", 36.1994074125, 37.1628351411, "Imperial",
++   "Bohça", 38.76126574995202, 35.00953755414746, "Neo-hitita",
++   "Karkamış", 36.82987291320572, 38.01646051604813, "Neo-hitita",
++ )
+> 
+> ggplot(data = world) +
++   geom_sf(fill = cor_bege, color = cor_bege) +
++   geom_sf(data = coastline, lwd = 0.9, alpha = 0.2) +
++   geom_sf(
++     data = rivers,
++     color = cor_azul,
++     lwd = 1.5
++   ) +
++   coord_sf(
++     xlim = c(25.5, 45),
++     ylim = c(42.5, 34.3),
++     expand = FALSE,
++     label_axes = c("", "")
++   ) +
++   geom_jitter(
++     data = places,
++     aes(x = x, y = y, color = fase),
++     size = 5,
++     alpha = 0.7
++   ) +
++   geom_label_repel(
++     data = places,
++     aes(x = x, y = y, color = fase, label = name),
++     size = 3,
++     alpha = 0.7
++   ) +
++   scale_color_manual(
++     values = c(
++       "#e89275",
++       "#035959",
++       "blue"
++     )
++   ) +
++   xlab("") +
++   ylab("") +
++   theme(
++     axis.title = element_blank(),
++     axis.text = element_blank(),
++     axis.ticks = element_blank(),
++     axis.line = element_blank(),
++     panel.background = element_rect(fill = cor_azul),
++     legend.position = "none",
++     plot.margin = grid::unit(c(0, 0, 0, 0), "mm"),
++     axis.ticks.length = unit(0, "pt")
++   )
+Mensagens de aviso:
+1: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Karkamış' in 'mbcsToSbcs': for ı (U+0131)
+2: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Karkamış' in 'mbcsToSbcs': for ş (U+015F)
+> 
+> ggsave(
++   "../../Mídia/Map04.png",
++   plot = last_plot(),
++   scale = 1,
++   width = 1920,
++   height = 1085,
++   units = "px",
++   dpi = 320,
++ )
+> 
+> proc.time()
+  usuário   sistema decorrido 
+    6.157     0.253     9.766 
