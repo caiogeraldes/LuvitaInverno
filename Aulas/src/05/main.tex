@@ -1,0 +1,127 @@
+%! TeX program = lualatex
+\documentclass[a4paper,12pt,article]{memoir}
+
+\input{./utils/style.tex}
+
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage[defblank]{paralist}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{linguex}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabto}
+
+\usepackage{hyperref}
+\input{./utils/hyperref.tex}
+
+\directlua{dofile('./utils/pie.lua')}
+\newcommand{\hittitetrans}[1]{%
+  \directlua{hittite_transcription("#1")}}
+\newcommand{\luwiantrans}[1]{%
+  \directlua{luwian_transcription("#1")}}
+\newcommand{\pietrans}[1]{%
+  \directlua{pie_transcription("#1")}}
+
+\newcommand{\Prep}{{\footnotesize\textsc{Prep.}}}
+\newcommand{\Det}{{\footnotesize\textsc{Det.}}}
+\newcommand{\Clt}{{\footnotesize\textsc{Clt.}}}
+\newcommand{\Nom}{{\footnotesize\textsc{Nom.}}}
+\newcommand{\Acu}{{\footnotesize\textsc{Acu.}}}
+\newcommand{\Dat}{{\footnotesize\textsc{Dat.}}}
+\newcommand{\Gen}{{\footnotesize\textsc{Gen.}}}
+\newcommand{\Abl}{{\footnotesize\textsc{Abl.}}}
+\newcommand{\Sg}{{\footnotesize\textsc{Sg.}}}
+\newcommand{\Pl}{{\footnotesize\textsc{Pl.}}}
+\newcommand{\Com}{{\footnotesize\textsc{Com.}}}
+\newcommand{\Neut}{{\footnotesize\textsc{Neut.}}}
+\newcommand{\Rel}{{\footnotesize\textsc{Rel.}}}
+\newcommand{\Conj}{{\footnotesize\textsc{Conj.}}}
+\newcommand{\Pret}{{\footnotesize\textsc{Pret.}}}
+\newcommand{\Pro}{{\footnotesize\textsc{Pro.}}}
+\newcommand{\Refl}{{\footnotesize\textsc{Refl.}}}
+\newcommand{\La}[1]{\textsc{l}.#1}
+\newcommand{\logo}[1]{\textnormal{#1}}
+\newcommand{\spac}{\textsuperscript{\textnormal{I}}}
+\newcommand{\lmasc}{\textnormal{|}}
+\newcommand{\Isep}{\textsuperscript{I}}
+\newcommand{\luwmasc}{{\textsuperscript{𔖶}}}
+\newcommand{\lbreak}{\hspace{2pt}\textnormal{||}\hspace{2pt}}
+\newcommand{\ipa}[1]{\foreignlanguage{ipa}{#1}}
+\newcommand{\pie}{\textsc{pie}}
+\newcommand{\pac}{\textsc{pac}}
+\newcommand{\parnumr}[2]{#1 \Roman{parcount}}
+\newcommand{\parnuma}[2]{#1 \arabic{parcount}}
+\newcounter{parcount}
+\newenvironment{parnumbersa}[1][§]{%
+   \par%
+	 \everypar{\hangpara{3em}{1}\stepcounter{parcount} \textnormal{\normalsize\parnuma{#1}}
+	 \tabto{2em}}%
+}{}
+\newenvironment{parnumbersr}[2][§]{%
+   \par%
+	 \everypar{\hangpara{6em}{1}\stepcounter{parcount} \textnormal{\normalsize\parnumr{#1}}
+	 \tabto{5em}}%
+}{}
+
+\usepackage{csquotes}
+\usepackage{fontspec}
+\usepackage[main=brazil, bidi=basic]{babel}
+\input{./utils/babel.tex}
+
+\usepackage{hyphenat}
+\input{./utils/hyphen.tex}
+
+\title{Luvita Hieroglífico: Aula 5}
+\author{Caio Geraldes}
+\date{3 de setembro de 2024}
+
+\usepackage[backend=biber,
+	style=abnt,
+	repeatfields,
+	scbib,
+	ittitles,
+	indent,
+	giveninits,
+	justify,
+	noslsn,
+	natbib,
+	extrayear,
+]{biblatex}
+\addbibresource{../../../Bibliografia/biblio.bib}
+\input{./utils/cite.tex}
+\newcommand{\GrHL}[1]{\citeabbrev*{Hoffner2008} #1}
+
+
+
+
+\usepackage{tikz} %for all basic options
+\usepackage{tikz-qtree} %for simple tree syntax
+\usepgflibrary{arrows} %for arrow endings
+\usetikzlibrary{positioning,shapes.multipart} %for structured nodes
+\usetikzlibrary{tikzmark}
+\usepackage{tree-dvips}
+
+\usepackage{multirow}
+
+\begin{document}
+
+\setlength{\Exlabelsep}{0.5em}
+\setlength{\SubExleftmargin}{1.5em}
+
+\frontmatter
+
+\mainmatter%
+
+\maketitle
+
+
+\input{./chaps/05_aula5.tex}
+
+
+\backmatter%
+
+\printbibliography%
+
+\end{document}

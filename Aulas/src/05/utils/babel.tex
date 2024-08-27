@@ -1,0 +1,46 @@
+\defaultfontfeatures{Renderer=Harfbuzz}
+
+\babelfont[brazil]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[brazil]{sf}{Noto Sans}
+\babelfont[brazil]{tt}[Scale=0.8]{Mononoki Nerd Font}
+
+\babelfont[german]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[brazil]{sf}{Noto Sans}
+\babelfont[brazil]{tt}[Scale=0.8]{Mononoki Nerd Font}
+
+\babelfont[english]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[english]{sf}{Noto Sans}
+\babelfont[english]{tt}[Scale=0.8]{Mononoki Nerd Font}
+
+\babelfont[german]{rm}[
+	SmallCapsFont=Gentium Plus,
+	SmallCapsFeatures={Letters=SmallCaps}]{Crimson Pro}
+\babelfont[german]{sf}{Noto Sans}
+\babelfont[german]{tt}[Scale=0.8]{Mononoki Nerd Font}
+
+
+\babelprovide[import, onchar=ids fonts letters]{ancientgreek}
+\babelfont[ancientgreek]{rm}{Brill}
+\babeltags{grc = ancientgreek}
+
+\babelprovide[import]{hebrew}
+\babelfont[hebrew]{rm}[Scale=0.8]{Ezra SIL}
+
+\input{./utils/luwian.tex}
+
+\babelprovide{hittite}
+\babelfont[hittite]{rm}{UllikummiA}
+
+
+\babelprovide{ipa}
+\babelfont[ipa]{rm}{Gentium Plus}
+
+\babelprovide[import,onchar=ids fonts]{sanskrit}
+\babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
+\babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
