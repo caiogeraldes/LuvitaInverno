@@ -53,6 +53,14 @@ Rode a inicialização:
 just init
 ```
 
+Se a inicialização falhar no primeiro comando, cheque o resultado de:
+
+```{just}
+just prepare
+```
+
+É necessário que o usuário do sistema consiga escrever na pasta `$TEXMFHOME`.
+
 
 ## Licença
 
