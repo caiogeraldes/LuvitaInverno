@@ -47,3 +47,7 @@ clean target:
     cd {{aulassrc}}{{target}} && rm -f main.aux main.bbl main.bcf *.log main.blg main.log main.out main.run.xml main.lof main.synctex.gz main.toc
 
 clean-all: (clean "Apostila") (clean "00_Introdução") (clean "01") (clean "02") (clean "Signário")
+
+prepare:
+     mkdir -p $(echo $TEXMFHOME)generic/tex --verbose
+     git clone https://github.com/caiogeraldes/luvita-cls $(echo $TEXMFHOME)generic/tex/luvita
