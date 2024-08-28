@@ -4,7 +4,7 @@ aulaspdfs := "Aulas/PDFS/"
 default:
     just --list
 
-all: (build "Apostila") (build "00_Introdução") (build "01") (build "02") (build "03") (build "04") (build "Signário") biblio
+all: (build "Apostila") (build "00_Introdução") (build "01") (build "02") (build "03") (build "04") (build "05") (build "Signário") biblio
 
 build target:
     cd {{aulassrc}}{{target}} && lualatex --interaction=batchmode --draftmode main.tex 
@@ -46,8 +46,10 @@ mapa:
 clean target:
     cd {{aulassrc}}{{target}} && rm -f main.aux main.bbl main.bcf *.log main.blg main.log main.out main.run.xml main.lof main.synctex.gz main.toc
 
-clean-all: (clean "Apostila") (clean "00_Introdução") (clean "01") (clean "02") (clean "Signário")
+clean-all: (clean "Apostila") (clean "00_Introdução") (clean "01") (clean "02") (clean "03") (clean "04") (clean "05") (clean "Signário")
 
 prepare:
      mkdir -p $(echo $TEXMFHOME)generic/tex --verbose
      git clone https://github.com/caiogeraldes/luvita-cls $(echo $TEXMFHOME)generic/tex/luvita
+
+init: prepare clean-all all
