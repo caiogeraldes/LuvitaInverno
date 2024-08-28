@@ -29,6 +29,30 @@ por e-mail para os inscritos.
 | 26/08          | Mutação em -i- e tópicos de linguística comparada | KARKAMISH A11b+c |
 | 02/09          | - | KARATEPE | 
 
+## Criando uma cópia do curso
+
+Se você quiser construir os documentos desse curso, é necessário ter instalados
+em seu sistema:
+
+- Git
+- Distribuição completa do LaTeX incluindo LuaLaTeX e LuaTeX
+- just
+- as fontes Gentium Plus, Crimson Pro, Noto Sans, Noto Serif Devanagari, Noto
+  Sans Anatolian Hieroglyphs, Mononoki Nerd Font, Brill, Ezra SIL e UllikummiA
+
+Depois disso, clone o repositório:
+
+```{bash}
+git clone https://github.com/caiogeraldes/LuvitaInverno
+cd LuvitaInverno
+```
+
+Rode a inicialização:
+
+```{bash}
+just init
+```
+
 
 ## Licença
 
