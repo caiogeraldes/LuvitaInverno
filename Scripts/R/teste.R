@@ -22,12 +22,12 @@ rivers <- ne_download(
 places <- tribble(
   ~name, ~y, ~x, ~fase,
   "Sipylos", 38.597787, 27.499106, "Imperial",
-  "NişantaŞ", 40.0149132097, 34.6171576225, "Imperial",
+  "Nişantaş", 40.0149132097, 34.6171576225, "Imperial",
   "Hama", 35.1329746, 36.7488012, "Neo-hitita",
   "Aleppo", 36.1994074125, 37.1628351411, "Imperial",
   "Karabel", 38.360912, 27.368145, "Imperial",
   "İvriz", 37.46307169994504, 34.198906697102316, "Neo-hitita",
-  "Yazilikaya", 40.02508824969756, 34.61116236775829, "Imperial",
+  "Yazılıkaya", 40.02508824969756, 34.61116236775829, "Imperial",
   "Nineveh", 36.359444, 43.152778, "Imperial",
   "İzmir", 38.42, 27.14, "Imperial",
 )
