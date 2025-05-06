@@ -123,6 +123,14 @@ places <- tribble(
   "Karkamış", 36.82987291320572, 38.01646051604813, "Neo-hitita",
   "Birecik", 37.02515413179792, 37.97677885050792, "Neo-hitita",
   "Şaraga", 36.86176448441441, 38.02056625072594, "Neo-hitita",
+  "SIPYLOS", 38.597787, 27.499106, "Imperial",
+  "NIŞANTAŞ", 40.0149132097, 34.6171576225, "Imperial",
+  "HAMA", 35.1329746, 36.7488012, "Neo-hitita",
+  "ALEPPO", 36.1994074125, 37.1628351411, "Imperial",
+  "KARABEL", 38.360912, 27.368145, "Imperial",
+  "İVRIZ", 37.46307169994504, 34.198906697102316, "Neo-hitita",
+  "YAZILIKAYA", 40.02508824969756, 34.61116236775829, "Imperial",
+  "NINEVEH", 36.359444, 43.152778, "Imperial",
 )
 
 ggplot(data = world) +
@@ -166,7 +174,7 @@ ggplot(data = world) +
   )
 
 ggsave(
-  "../../Mídia/Map01.png",
+  "../../Mídia/MapTodo.png",
   plot = last_plot(),
   scale = 1,
   width = 1920,
