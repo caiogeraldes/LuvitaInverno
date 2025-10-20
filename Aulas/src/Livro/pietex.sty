@@ -1,0 +1,11 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pietex}[2024/08/28 Provides PIETeX]
+
+\directlua{require('pie.lua')}
+\newcommand{\hittitetrans}[1]{%
+	\directlua{hittite_transcription("#1")}}
+\newcommand{\luwiantrans}[1]{%
+	\directlua{luwian_transcription("#1")}}
+\newcommand{\pietrans}[1]{%
+	\directlua{pie_transcription("#1")}}
+

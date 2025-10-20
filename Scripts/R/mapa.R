@@ -167,7 +167,7 @@ ggplot(data = world) +
   )
 
 ggsave(
-  "../../Mídia/MapTodo.png",
+  "../../Mídia/Map01.png",
   plot = last_plot(),
   scale = 1,
   width = 1920,

@@ -1,0 +1,72 @@
+%! TeX program = lualatex
+\documentclass[apostila]{luvita}
+
+\title{Luvita Hieroglífico}
+\author{Caio Geraldes}
+
+\addbibresource{../../../Bibliografia/biblio.bib}
+
+
+\begin{document}
+
+\frontmatter
+
+\thecoverpage%
+\cleardoublepage%
+\thetitlepage%
+
+
+\cleardoublepage%
+\chap{Abreviações}
+\input{./chaps/99_abreviações.tex}
+
+\cleardoublepage%
+\tableofcontents*
+
+\cleardoublepage%
+\listoffigures*
+
+\mainmatter%
+
+
+\chap{Introdução}
+\input{./chaps/00_intro.tex}
+
+\chapter{Sistema de escrita, fonologia e flexão nominal}
+\input{./chaps/01_aula1.tex}
+
+\chapter{Flexão verbal, partículas e enclíticos}
+\input{./chaps/02_aula2.tex}
+
+\chapter{Sintaxe}
+\input{./chaps/03_aula3.tex}
+
+\chapter{Fonologia histórica}
+\input{./chaps/04_aula4.tex}
+
+
+\input{./chaps/05_aula5.tex}
+
+\backmatter%
+
+
+\chap{Vocabulário}
+\input{./chaps/vocab.tex}
+
+
+\chap{Signário}
+\input{./chaps/logogramas.tex}
+%
+%
+% \chap{Glossário}
+
+\chap{Leituras extras}
+\input{./chaps/02_extras.tex}
+
+\printbibliography%
+
+\cleardoublepage%
+
+\colofao{}
+
+\end{document}
