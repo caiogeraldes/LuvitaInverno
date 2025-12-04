@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{luviolivro}[2024/08/28 Apostila Luvita]
+\ProvidesClass{luviolivro}[2024/08/28 Apostila Lúvio]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions\relax
